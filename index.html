@@ -7,6 +7,63 @@
     <link rel="stylesheet" href="/styles/css/style.css">
 </head>
 <body>
-
+    <form>
+        <div class="form-content">
+            <div class="username-block">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" placeholder="Enter username">
+            </div>
+            <div class="password-block">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Enter password">
+                <span>Your password is between 4 and 12 characters</span>
+            </div>
+            <div class="eror-block">
+                <label for="eror">Input Text Label</label>
+                <input type="text" name="eror" id="eror" placeholder="Enter text">
+            </div>
+            <div class="remember-block">
+                <label for="remember">
+                    <input type="checkbox" name="remember" id="remember">
+                    <span class="remember-check"></span>
+                    <span>Remember me</span>
+                </label>
+            </div>
+            <div class="toggle-block">
+               <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                    <p class="text-off">Off</p>
+                    <p class="text-on">On</p>
+                </label>
+            </div>
+            <div class="radio-selection-block">
+                <div>
+                    <input type="radio" id="selection-1" name="selection" value="huey" />
+                    <label for="selection-1">Radio selection 1</label>
+                </div>
+                <div>
+                    <input type="radio" id="selection-2" name="selection" value="dewey" checked />
+                    <label for="selection-2">Radio selection 2</label>
+                </div>
+                <div>
+                    <input type="radio" id="selection-3" name="selection" value="louie" />
+                    <label for="selection-3">Radio selection 2</label>
+                </div>
+            </div>
+            <div class="dropdown-block">
+                <label>Dropdown Title</label>
+                <select name="select">
+                    <option value="value1" selected>Dropdown option</option>
+                    <option value="value2">Dropdown option 1</option>
+                    <option value="value3">Dropdown option</option>
+                </select>
+            </div>
+            <div class="button-block">
+                <button>Cancel</button>
+                <button>Next</button>
+            </div>
+        </div>
+    </form>
 </body>
 </html>

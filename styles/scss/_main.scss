@@ -1,0 +1,194 @@
+* {
+    box-sizing: border-box;
+}
+form {
+    background-color: #795cfa2f;
+    font-family: "Noto Sans";
+}
+
+.form-content {
+    width: 760px;
+    height: 1200px;
+    padding: 96px 98px 92px;
+    background-color: $white;
+    margin: 0 auto;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.username-block,
+.password-block,
+.eror-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    
+    label {
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1.5;
+        letter-spacing: normal;
+        color: $grey;
+    }
+    
+    input {
+        padding: 17px;
+        border-radius: 8px;
+        border: none;
+        box-shadow: inset 0 0 0 1px #6666664f;
+
+        &:hover {
+            box-shadow: inset 0 0 0 2px $maincolor;
+        }
+
+        &::placeholder {
+            font-size: 16px;
+            font-weight: normal;
+            line-height: 1.5;
+            letter-spacing: normal;
+            color: $grey;
+
+            &:hover {
+                font-weight: 600;
+            }
+        }
+    }
+    
+
+    span {
+        font-size: 12px;
+        font-weight: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        color: $grey;
+    }
+}
+
+.remember-block {
+    span {
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        color: $grey;
+    }
+
+    input {
+        display: none;
+    }
+
+    input:checked + span {
+        background-image: url(/assets/icons/check.svg);
+    }
+    label {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+    }
+}
+
+
+.remember-check {
+    display: block;
+    width: 24px;
+    height: 24px;
+    border: solid 1px $lightgrey;
+    border-radius: 8px;
+    background-color: $white;
+    background-size: contain;
+}
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 49px;
+    height: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    p {
+        margin-left: 65px;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        color: $grey;
+    }
+}
+  
+  /* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+  
+  /* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $maincolor;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+    
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 2px;
+    bottom: 3px;
+    background-color: $white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+    
+input:checked + .slider {
+    background-color: $lightgrey;
+    box-shadow: inset 0 0 0 1px #6666664f;
+}
+    
+.text-on {
+    display: block;
+}
+  
+.text-off {
+    display: none;
+}
+
+input:checked + span + .text-off {
+    display: block;
+}
+
+input:checked + span + .text-off + .text-on {
+    display: none;
+}
+  
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 1px #6666664f;
+  }

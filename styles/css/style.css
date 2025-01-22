@@ -369,3 +369,200 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+form {
+  background-color: rgba(121, 92, 250, 0.1843137255);
+  font-family: "Noto Sans";
+}
+
+.form-content {
+  width: 760px;
+  height: 1200px;
+  padding: 96px 98px 92px;
+  background-color: #fff;
+  margin: 0 auto;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.username-block,
+.password-block,
+.eror-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.username-block label,
+.password-block label,
+.eror-block label {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #666;
+}
+.username-block input,
+.password-block input,
+.eror-block input {
+  padding: 17px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: inset 0 0 0 1px rgba(102, 102, 102, 0.3098039216);
+}
+.username-block input:hover,
+.password-block input:hover,
+.eror-block input:hover {
+  box-shadow: inset 0 0 0 2px #7a5cfa;
+}
+.username-block input::-moz-placeholder, .password-block input::-moz-placeholder, .eror-block input::-moz-placeholder {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #666;
+}
+.username-block input::placeholder,
+.password-block input::placeholder,
+.eror-block input::placeholder {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #666;
+}
+.username-block input::-moz-placeholder:hover, .password-block input::-moz-placeholder:hover, .eror-block input::-moz-placeholder:hover {
+  font-weight: 600;
+}
+.username-block input::placeholder:hover,
+.password-block input::placeholder:hover,
+.eror-block input::placeholder:hover {
+  font-weight: 600;
+}
+.username-block span,
+.password-block span,
+.eror-block span {
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #666;
+}
+
+.remember-block span {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #666;
+}
+.remember-block input {
+  display: none;
+}
+.remember-block input:checked + span {
+  background-image: url(/assets/icons/check.svg);
+}
+.remember-block label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.remember-check {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border: solid 1px #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  background-size: contain;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 49px;
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.switch p {
+  margin-left: 65px;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #666;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #7a5cfa;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 2px;
+  bottom: 3px;
+  background-color: #fff;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #ccc;
+  box-shadow: inset 0 0 0 1px rgba(102, 102, 102, 0.3098039216);
+}
+
+.text-on {
+  display: block;
+}
+
+.text-off {
+  display: none;
+}
+
+input:checked + span + .text-off {
+  display: block;
+}
+
+input:checked + span + .text-off + .text-on {
+  display: none;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(102, 102, 102, 0.3098039216);
+}
