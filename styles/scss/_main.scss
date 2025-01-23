@@ -5,10 +5,9 @@ form {
     background-color: #795cfa2f;
     font-family: "Noto Sans";
 }
-
 .form-content {
     width: 760px;
-    height: 1200px;
+    height: 100vh;
     padding: 96px 98px 92px;
     background-color: $white;
     margin: 0 auto;
@@ -17,6 +16,8 @@ form {
     flex-direction: column;
     gap: 32px;
 }
+
+//------------------------------USERNAME, PASSWORD, EROR------------------------//
 
 .username-block,
 .password-block,
@@ -67,6 +68,8 @@ form {
     }
 }
 
+//------------------------------REMEMBER ME------------------------//
+
 .remember-block {
     span {
         font-size: 16px;
@@ -102,6 +105,7 @@ form {
     background-size: contain;
 }
 
+//------------------------------TOGGLE------------------------//
 
 .switch {
     position: relative;
@@ -122,15 +126,14 @@ form {
     }
 }
   
-  /* Hide default HTML checkbox */
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+.switch  {
+    input{
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
 }
 
-  
-  /* The slider */
 .slider {
     position: absolute;
     cursor: pointer;
@@ -141,19 +144,20 @@ form {
     background-color: $maincolor;
     -webkit-transition: .4s;
     transition: .4s;
+
+    &:before {
+        position: absolute;
+        content: "";
+        height: 18px;
+        width: 18px;
+        left: 2px;
+        bottom: 3px;
+        background-color: $white;
+        -webkit-transition: .4s;
+        transition: .4s
+    }
 }
     
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 18px;
-    width: 18px;
-    left: 2px;
-    bottom: 3px;
-    background-color: $white;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
     
 input:checked + .slider {
     background-color: $lightgrey;
@@ -183,7 +187,6 @@ input:checked + span + .text-off + .text-on {
     transform: translateX(26px);
   }
   
-  /* Rounded sliders */
   .slider.round {
     border-radius: 34px;
   }
@@ -192,3 +195,184 @@ input:checked + span + .text-off + .text-on {
     border-radius: 50%;
     box-shadow: inset 0 0 0 1px #6666664f;
   }
+
+//------------------------------RADIO BUTTON------------------------//
+
+.radio-selection-block {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.radio-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+
+    [type="radio"]:checked,
+    [type="radio"]:not(:checked) {
+        position: absolute;
+        left: -9999px;
+    }
+    [type="radio"]:checked + label,
+    [type="radio"]:not(:checked) + label
+    {
+        position: relative;
+        padding-left: 42px;
+        cursor: pointer;
+        line-height: 27px;
+        display: inline-block;
+        color: #666;
+    }
+    [type="radio"]:checked + label:before,
+    [type="radio"]:not(:checked) + label:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 24px;
+        height: 24px;
+        border: 1px solid #ddd;
+        border-radius: 100%;
+        background: #fff;
+    }
+    [type="radio"]:checked + label:after,
+    [type="radio"]:not(:checked) + label:after {
+        content: '';
+        width: 12px;
+        height: 12px;
+        background: $maincolor;
+        position: absolute;
+        top: 7px;
+        left: 7px;
+        border-radius: 100%;
+        -webkit-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+    }
+    [type="radio"]:not(:checked) + label:after {
+        opacity: 0;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    [type="radio"]:checked + label:after {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+//------------------------------DROPDOWN------------------------//
+
+.dropdown-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+
+    label {
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1.5;
+        letter-spacing: normal;
+        color: $grey;
+    }
+
+    &::after,
+    &::before {
+        --size: 0.3rem;
+        position: absolute;
+        content: "";
+        right: 1rem;
+        pointer-events: none;
+        right: 5%;
+    }
+
+    &::before {
+        border-left: var(--size) solid transparent;
+        border-right: var(--size) solid transparent;
+        border-bottom: var(--size) solid black;
+        top: 56%;
+    }
+
+    &::after {
+        border-left: var(--size) solid transparent;
+        border-right: var(--size) solid transparent;
+        border-top: var(--size) solid black;
+        top: 68%;
+    }
+}
+
+.dropdown {
+    padding: 16px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: inset 0 0 0 1px #6666664f;
+    background-color: $white;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: $grey;
+    appearance: none;
+
+    &:hover {
+        box-shadow: inset 0 0 0 3px $maincolor;
+        font-weight: 500;
+    }
+
+    option {
+        display: block;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        text-align: left;
+        color: $darkgrey;
+        padding: 16px;
+        box-shadow: inset 0 0 0 1px #6666664f;
+        background-color: $white;
+    }
+}
+
+
+//------------------------------BUTTON------------------------//
+
+.button-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.button-cancel,
+.button-next {
+    padding: 16px;
+    border-radius: 8px;
+    width: 172px;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    border: 1px solid $maincolor;
+}
+
+.button-cancel {
+    color: $maincolor;
+    background-color: $white;
+
+    &:hover {
+        color: $white;
+        background-color: $maincolor;
+    }
+}
+
+.button-next {
+    color: $white;
+    background-color: $maincolor;
+
+    &:hover {
+        color: $maincolor;
+        background-color: $white;
+    }
+}
